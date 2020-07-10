@@ -40,3 +40,6 @@ print("Frequency of use of Poirot in each chapter is", poirot_dist)
 quote = "A man in love is a sorry spectacle."
 chapter_quote_found = getChapterQuoteAppears(quote)
 print("The quote \"", quote, "\" was found in chapter", chapter_quote_found)
+
+generated_sentence = generateSentence()
+print("A randomly generated sentence using unigrams starting with \"The\" is:\n", generated_sentence)

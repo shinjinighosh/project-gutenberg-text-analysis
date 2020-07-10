@@ -1,3 +1,4 @@
+import random
 import collections
 
 # a collection of helper functions to use
@@ -138,3 +139,29 @@ def getChapterQuoteAppears(quote):
         else:
             chapter += 1
             chapter_text = ""
+    return chapter
+
+
+def getNextWord(text, word):
+    ''' takes in a list of words as text and a word word, and returns a randomly chosen next word out of all the times word was found in text'''
+    next_choices = []
+    for i in range(len(text) - 1):
+        if text[i] == word:
+            next_choices.append(text[i + 1])
+    return random.choice(next_choices)
+
+
+def generateSentence():
+    '''generates a sentence of length 20 starting with the word 'the', using randomly chosen unigrams'''
+    sentence = ["The"]
+    lines = readFile("863.txt")
+    chapter = -1
+    total_text = ""
+    for line in lines:
+        if line[:7] != "CHAPTER":
+            total_text += line.rstrip("\n") + " "
+    all_words = total_text.split()
+    while len(sentence) < 20:
+        word = getNextWord(all_words, sentence[-1])
+        sentence.append(word)
+    return " ".join(sentence)
