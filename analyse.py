@@ -36,3 +36,7 @@ print("20 least used interesting unique words are\n", bottom_20_interesting_word
 
 poirot_dist = getFrequencyOfWord("poirot")
 print("Frequency of use of Poirot in each chapter is", poirot_dist)
+
+quote = "A man in love is a sorry spectacle."
+chapter_quote_found = getChapterQuoteAppears(quote)
+print("The quote \"", quote, "\" was found in chapter", chapter_quote_found)

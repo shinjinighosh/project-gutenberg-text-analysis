@@ -123,3 +123,18 @@ def getFrequencyOfWord(given_word):
             frequency_array.append(count)
             count = 0
     return frequency_array
+
+
+def getChapterQuoteAppears(quote):
+    '''take in a string (the quote) and return the chapter number it occurs in. If the quote cannot be found in the book, returns -1'''
+    lines = readFile("863.txt")
+    chapter = -1
+    chapter_text = ""
+    for line in lines:
+        if line[:7] != "CHAPTER":
+            chapter_text += line.rstrip("\n") + " "
+            if quote in chapter_text:
+                return chapter
+        else:
+            chapter += 1
+            chapter_text = ""
