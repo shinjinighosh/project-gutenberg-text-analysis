@@ -27,3 +27,6 @@ print(f"There are {num_unique_words} unique words in this text.")
 
 top_20_words = get20MostFrequentWords("863.txt")
 print("The top 20 unique words are\n", top_20_words)
+
+top_20_interesting_words = get20MostInterestingFrequentWords("863.txt")
+print("The top 20 interesting unique words are\n", top_20_interesting_words)

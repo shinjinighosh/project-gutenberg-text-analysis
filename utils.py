@@ -41,6 +41,32 @@ def get20MostFrequentWords(filename):
         if line[:7] != "CHAPTER":
             words = line.split()
             for word in words:
+                word = word.strip(" ,\".:\'").lower()
+                if word not in word_dict:
+                    word_dict[word] = 1
+                else:
+                    word_dict[word] += 1
+    counter = collections.Counter(word_dict)
+    top_words = []
+    for key, value in counter.most_common(20):
+        top_words.append([key, value])
+    return top_words
+
+
+def get20MostInterestingFrequentWords(filename):
+    '''takes in a file with name filename and returns an array of the top 20 interesting words in the file along with their counts'''
+    lines = readFile(filename)
+    stopwords_list = readFile("1-1000.txt")
+    stopwords = [i.strip().lower() for i in stopwords_list]
+    stopwords = set(stopwords)
+    word_dict = {}
+    for line in lines:
+        if line[:7] != "CHAPTER":
+            words = line.split()
+            for word in words:
+                word = word.strip(" ,\".:\'").lower()
+                if word in stopwords:
+                    continue
                 if word not in word_dict:
                     word_dict[word] = 1
                 else:
