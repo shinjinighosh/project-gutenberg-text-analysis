@@ -30,3 +30,9 @@ print("The top 20 unique words are\n", top_20_words)
 
 top_20_interesting_words = get20MostInterestingFrequentWords("863.txt")
 print("The top 20 interesting unique words are\n", top_20_interesting_words)
+
+bottom_20_interesting_words = get20LeastFrequentWords("863.txt")
+print("20 least used interesting unique words are\n", bottom_20_interesting_words)
+
+poirot_dist = getFrequencyOfWord("poirot")
+print("Frequency of use of Poirot in each chapter is", poirot_dist)
