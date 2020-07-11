@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{wasysym} %this lets me make smiley faces :-)
-
+\usepackage{booktabs}
 
 \title{Project Gutenberg Analysis}
 \author{Shinjini Ghosh}
@@ -25,6 +25,27 @@
   \item \textit{Total number of words:} 56410
   \item \textit{Total number of unique words:} 9925
   \item \textit{Top 20 most frequent words:}
+        \begin{table}[h]
+          \centering
+          \begin{tabular}{c|l|r||c|l|r}
+            \toprule
+            No. & Word & Frequency & No. & Word & Frequency \\
+            \midrule
+            1 & the & 2624 & 11 & in & 821 \\
+            2 & i & 1654 & 12 & he & 718 \\
+            3 & to & 1336 & 13 & is & 538 \\
+            4 & of & 1261 & 14 & not & 511 \\
+            5 & a & 1201 & 15 & had & 501 \\
+            6 & and & 1124 & 16 & she & 482 \\
+            7 & it & 955 & 17 & her & 462 \\
+            8 & that & 938 & 18 & his & 416 \\
+            9 & was & 926 & 19 & at & 394 \\
+            10 & you & 848 & 20 & but & 394 \\
+            \bottomrule
+          \end{tabular}
+          \caption{Top 20 most frequent words}
+          \label{top20}
+        \end{table}
 \end{enumerate}
 
 \end{document}
