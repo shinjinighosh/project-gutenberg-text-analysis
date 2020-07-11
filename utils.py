@@ -17,7 +17,7 @@ def getTotalNumberOfWords(filename):
     word_count = 0
     lines = readFile(filename)
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             word_count += len(line.split())
     return word_count
 
@@ -27,7 +27,7 @@ def getTotalUniqueWords(filename):
     unique_words = set()
     lines = readFile(filename)
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             words = line.split()
             for word in words:
                 unique_words.add(word)
@@ -39,7 +39,7 @@ def get20MostFrequentWords(filename):
     lines = readFile(filename)
     word_dict = {}
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             words = line.split()
             for word in words:
                 word = word.strip(" ,\".:\'").lower()
@@ -62,7 +62,7 @@ def get20MostInterestingFrequentWords(filename):
     stopwords = set(stopwords)
     word_dict = {}
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             words = line.split()
             for word in words:
                 word = word.strip(" ,\".:\'").lower()
@@ -87,7 +87,7 @@ def get20LeastFrequentWords(filename):
     stopwords = set(stopwords)
     word_dict = {}
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             words = line.split()
             for word in words:
                 word = word.strip(" ,\".:\'").lower()
@@ -114,7 +114,7 @@ def getFrequencyOfWord(given_word, filename):
     frequency_array = []
     count = 0
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             words = line.split()
             for word in words:
                 word = word.strip(" ,\".:\'").lower()
@@ -132,7 +132,7 @@ def getChapterQuoteAppears(quote, filename):
     chapter = -1
     chapter_text = ""
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             chapter_text += line.rstrip("\n") + " "
             if quote in chapter_text:
                 return chapter
@@ -158,7 +158,7 @@ def generateSentence(filename):
     chapter = -1
     total_text = ""
     for line in lines:
-        if line[:7] != "CHAPTER":
+        if "CHAPTER" not in line:
             total_text += line.rstrip("\n") + " "
     all_words = total_text.split()
     while len(sentence) < 20:
