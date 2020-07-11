@@ -57,7 +57,7 @@ def get20MostFrequentWords(filename):
 def get20MostInterestingFrequentWords(filename):
     '''takes in a file with name filename and returns an array of the top 20 interesting words in the file along with their counts'''
     lines = readFile(filename)
-    stopwords_list = readFile("1-1000.txt")
+    stopwords_list = readFile("Books/1-1000.txt")
     stopwords = [i.strip().lower() for i in stopwords_list]
     stopwords = set(stopwords)
     word_dict = {}
@@ -82,7 +82,7 @@ def get20MostInterestingFrequentWords(filename):
 def get20LeastFrequentWords(filename):
     '''takes in a file with name filename and returns an array of the 20 least frequent interesting words in the file along with their counts'''
     lines = readFile(filename)
-    stopwords_list = readFile("1-1000.txt")
+    stopwords_list = readFile("Books/1-1000.txt")
     stopwords = [i.strip().lower() for i in stopwords_list]
     stopwords = set(stopwords)
     word_dict = {}
@@ -107,7 +107,7 @@ def get20LeastFrequentWords(filename):
     return least_frequent_words
 
 
-def getFrequencyOfWord(given_word, filename="863.txt"):
+def getFrequencyOfWord(given_word, filename):
     '''take in a word and return an array of the number of the times the word was used in each chapter'''
     lines = readFile(filename)
     given_word = given_word.lower()
@@ -126,7 +126,7 @@ def getFrequencyOfWord(given_word, filename="863.txt"):
     return frequency_array
 
 
-def getChapterQuoteAppears(quote, filename="863.txt"):
+def getChapterQuoteAppears(quote, filename):
     '''take in a string (the quote) and return the chapter number it occurs in. If the quote cannot be found in the book, returns -1'''
     lines = readFile(filename)
     chapter = -1
@@ -151,7 +151,7 @@ def getNextWord(text, word):
     return random.choice(next_choices)
 
 
-def generateSentence(filename="863.txt"):
+def generateSentence(filename):
     '''generates a sentence of length 20 starting with the word 'the', using randomly chosen unigrams'''
     sentence = ["The"]
     lines = readFile(filename)
