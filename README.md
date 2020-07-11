@@ -1,6 +1,4 @@
-# project-gutenberg-text-analysis
-
-## Text Analysis of books from Project Gutenberg
+# Text Analysis of books from Project Gutenberg
 
 Interesting analyses of books from Project Gutenberg. Use a book with demarcated chapters if you wish to look up which chapter a quote comes from, or be able to track the progression of a word over chapters.
 
