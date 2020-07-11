@@ -9,6 +9,7 @@
 \usepackage{float}
 \usepackage{wasysym} %this lets me make smiley faces :-)
 \usepackage{booktabs}
+\usepackage{float}
 
 \title{Project Gutenberg Analysis}
 \author{Shinjini Ghosh}
@@ -47,7 +48,7 @@
           \label{top20}
         \end{table}
   \item \textit{Top 20 most frequent interesting words:} Here, we have excluded the top 1000 English words from consideration.
-        \begin{table}[h]
+        \begin{table}[H]
           \centering
           \begin{tabular}{c|l|r||c|l|r}
             \toprule
@@ -68,6 +69,17 @@
           \caption{Top 20 most frequent interesting words}
           \label{top20int}
         \end{table}
+  \item \textit{Top 20 least frequent words}, chosen randomly out of all those used just once: \\ subsided, world-wide, attended, sensational, persist, invalided, front, depressing, month's, sick, relations, senior, forty-five, yarn, inviting, again-after, seventy, autocratic, social, fondness
+  \item \textit{Interesting word usage pattern:} Poirot comes into the book, not right at the beginning, but around the fifth chapter, and then has a \textit{lot} of action before going a bit out of sight again towards the end. The number of usages of "Poirot" in each chapter of the book are [0, 1, 5, 1, 41, 79, 13, 49, 52, 17, 43, 18, 14].
+  \item \textit{Look up a quote:} The quote ``A man in love is a sorry spectacle." was found in Chapter $12$.
+  \item \textit{Randomly generated sentence:} We used a unigram model, randomly choosing a next word out of all the eligible words, to create a sentence starting with "The" and 20-word long. A few interesting sentences that came out are:
+            \begin{itemize}
+              \item The jury is that?" ``No." ``Is it on the criminal or two, and wife." ``Ah!" said John. ``What does not
+              \item The old friend Japp was frowning perplexedly, and finally settled down the poisoned last moment--which partly your possession. No notice
+              \item The gardeners' evidence, but you must hurry to catch sight of the net he is correct, madame. But he goes,
+              \item The examination of the daily papers, all this is a moment's satisfaction of Hercule Poirot, and in which I dropped
+              \item The Scotland Yard fellows?" ``Gone to substitute some important document--possibly a book?" ``Yes, yes," I wonder?" ``Some one to my
+            \end{itemize}
 \end{enumerate}
 
 \end{document}
