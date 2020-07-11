@@ -23,13 +23,13 @@ bottom_20_interesting_words = get20LeastFrequentWords(filename)
 print("20 least used interesting unique words are\n", bottom_20_interesting_words)
 
 to_search = input("Do you want to track the progression of a word over chapters? [y/n] ")
-if to_search:
+if to_search in ["y", "Y", "yes"]:
     word_to_search = input("Enter the word to search: ")
     word_dist = getFrequencyOfWord(word_to_search, filename)
     print("Frequency of use of " + word_to_search + " in each chapter is", word_dist)
 
 to_search_quote = input("Do you want to search for a quote? [y/n] ")
-if to_search_quote:
+if to_search_quote in ["y", "Y", "yes"]:
     quote = input("Enter quote to search: ")
     chapter_quote_found = getChapterQuoteAppears(quote, filename)
     print("The quote \"", quote, "\" was found in chapter", chapter_quote_found)
