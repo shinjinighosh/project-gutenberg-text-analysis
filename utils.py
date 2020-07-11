@@ -107,9 +107,9 @@ def get20LeastFrequentWords(filename):
     return least_frequent_words
 
 
-def getFrequencyOfWord(given_word):
+def getFrequencyOfWord(given_word, filename="863.txt"):
     '''take in a word and return an array of the number of the times the word was used in each chapter'''
-    lines = readFile("863.txt")
+    lines = readFile(filename)
     given_word = given_word.lower()
     frequency_array = []
     count = 0
@@ -126,9 +126,9 @@ def getFrequencyOfWord(given_word):
     return frequency_array
 
 
-def getChapterQuoteAppears(quote):
+def getChapterQuoteAppears(quote, filename="863.txt"):
     '''take in a string (the quote) and return the chapter number it occurs in. If the quote cannot be found in the book, returns -1'''
-    lines = readFile("863.txt")
+    lines = readFile(filename)
     chapter = -1
     chapter_text = ""
     for line in lines:
@@ -151,10 +151,10 @@ def getNextWord(text, word):
     return random.choice(next_choices)
 
 
-def generateSentence():
+def generateSentence(filename="863.txt"):
     '''generates a sentence of length 20 starting with the word 'the', using randomly chosen unigrams'''
     sentence = ["The"]
-    lines = readFile("863.txt")
+    lines = readFile(filename)
     chapter = -1
     total_text = ""
     for line in lines:
